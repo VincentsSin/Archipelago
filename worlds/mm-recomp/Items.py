@@ -15,12 +15,33 @@ class MMRItemData(NamedTuple):
 
 
 item_data_table: Dict[str, MMRItemData] = {
-    "Clock Town Stray Fairy": MMRItemData(
-        code=0xFF34769420000000,
+    "Stray Fairy (Clock Town)": MMRItemData(
+        code=0x3476942000FE7F,
         type=ItemClassification.progression
     ),
+    "Progressive Magic Upgrade": MMRItemData(
+        code=0x3476942000FD00,
+        type=ItemClassification.progression
+    ),
+    "Moon's Tear": MMRItemData(
+        code=0x34769420000096,
+        type=ItemClassification.progression
+    ),
+    "Land Title Deed": MMRItemData(
+        code=0x34769420000097,
+        type=ItemClassification.progression
+    ),
+    "Ocarina of Time": MMRItemData(
+        code=0x3476942000004C,
+        type=ItemClassification.progression
+    ),
+    "Heart Piece": MMRItemData(
+        code=0x3476942000000C,
+        type=ItemClassification.useful,
+        num_exist=1
+    ),
     "Blue Rupee": MMRItemData(
-        code=0xFF34769420FF0000,
+        code=0x3476942000FF01,
         type=ItemClassification.filler#,
         #can_create=lambda multiworld, player: bool(getattr(multiworld, "hard_mode")[player]),
     ),

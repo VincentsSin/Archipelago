@@ -15,10 +15,29 @@ class MMRLocationData(NamedTuple):
 
 
 location_data_table: Dict[str, MMRLocationData] = {
-    "Stray Fairy at Laundry Pool": MMRLocationData(
+    "Laundry Pool Stray Fairy (Clock Town)": MMRLocationData(
         region="Clock Town",
-        address=0xFF34769420000000#,
-        #locked_item = "Small Key"
+        address=0x3476942000FE7F
+    ),
+    "Great Fairy Reward (Clock Town)": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942000FC00
+    ),
+    "Astral Observatory": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000096
+    ),
+    "Land Title Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000097
+    ),
+    "Top of Clock Tower": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942000004C
+    ),
+    "Heart Piece (South Clock Town)": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420006F0A
     ),
     #"The Item on the Desk": CliqueLocationData(
     #    region="The Button Realm",

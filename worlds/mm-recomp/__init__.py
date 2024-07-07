@@ -31,14 +31,14 @@ class MMRWorld(World):
     game = "The Majora's Mask Recompilation"
     data_version = 1
     web = MMRWebWorld()
-    option_definitions = room_options
+    option_definitions = mmr_options
     location_name_to_id = location_table
     item_name_to_id = item_table
 
     def generate_early(self):
         pass
     
-    def create_item(self, name: str) -> RoomItem:
+    def create_item(self, name: str) -> MMRItem:
         return MMRItem(name, item_data_table[name].type, item_data_table[name].code, self.player)
 
     def create_items(self) -> None:
@@ -50,6 +50,7 @@ class MMRWorld(World):
             if item.code and item.can_create(self.multiworld, self.player) and (item_pool_count[name] < item.num_exist):
                 item_pool.append(self.create_item(name))
                 item_pool_count[name] += 1
+                #self.multiworld.local_items[self.player].value.add(name)
 
         self.multiworld.itempool += item_pool
 
@@ -84,9 +85,11 @@ class MMRWorld(World):
         return "Blue Rupee"
 
     def set_rules(self) -> None:
-        #button_rule = get_button_rule(self.multiworld, self.player)
-        #self.multiworld.get_location("Cabinet", self.player).access_rule = lambda state: state.has("A Small Key", self.player)
-        #self.multiworld.get_location("In the Player's Mind", self.player).access_rule = button_rule
+        self.multiworld.get_location("Great Fairy Reward (Clock Town)", self.player).access_rule = lambda state: state.has("Stray Fairy (Clock Town)", self.player)
+        self.multiworld.get_location("Astral Observatory", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player)
+        self.multiworld.get_location("Land Title Trade", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
+        self.multiworld.get_location("Heart Piece (South Clock Town)", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
+        self.multiworld.get_location("Top of Clock Tower", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player, 1) and state.has("Moon's Tear", self.player)
 
         # Do not allow button activations on buttons.
         #self.multiworld.get_location("The Big Red Button", self.player).item_rule =\
