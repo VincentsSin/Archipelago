@@ -47,10 +47,11 @@ class MMRWorld(World):
         for name, item in item_data_table.items():
             if name not in item_pool_count:
                 item_pool_count[name] = 0
-            if item.code and item.can_create(self.multiworld, self.player) and (item_pool_count[name] < item.num_exist):
-                item_pool.append(self.create_item(name))
-                item_pool_count[name] += 1
-                #self.multiworld.local_items[self.player].value.add(name)
+            if item.code and item.can_create(self.multiworld, self.player):
+                while item_pool_count[name] < item.num_exist:
+                    item_pool.append(self.create_item(name))
+                    item_pool_count[name] += 1
+                    #self.options.local_items[self.player].add(name)
 
         self.multiworld.itempool += item_pool
 
@@ -85,11 +86,17 @@ class MMRWorld(World):
         return "Blue Rupee"
 
     def set_rules(self) -> None:
-        self.multiworld.get_location("Great Fairy Reward (Clock Town)", self.player).access_rule = lambda state: state.has("Stray Fairy (Clock Town)", self.player)
-        self.multiworld.get_location("Astral Observatory", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player)
+        self.multiworld.get_location("North Clock Town Great Fairy Reward (Non-Human)", self.player).access_rule = lambda state: state.has("Stray Fairy (Clock Town)", self.player) and state.has("Deku Mask", self.player)
+        self.multiworld.get_location("Astral Observatory", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player) and state.has("Deku Mask", self.player)
         self.multiworld.get_location("Land Title Trade", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
-        self.multiworld.get_location("Heart Piece (South Clock Town)", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
-        self.multiworld.get_location("Top of Clock Tower", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player, 1) and state.has("Moon's Tear", self.player)
+        #self.multiworld.get_location("Heart Piece (South Clock Town)", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
+        #self.multiworld.get_location("Chest (East Clock Town)", self.player).access_rule = lambda state: state.has("Deku Mask", self.player)
+
+        self.multiworld.get_location("Top of Clock Tower (Ocarina of Time)", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player, 1)
+        self.multiworld.get_location("Top of Clock Tower (Song of Time)", self.player).access_rule = self.multiworld.get_location("Top of Clock Tower (Ocarina of Time)", self.player).access_rule
+
+        #self.multiworld.get_location("Happy Mask Salesman (Song of Healing)", self.player).access_rule = lambda state: state.has("Ocarina of Time", self.player)
+        #self.multiworld.get_location("Happy Mask Salesman (Deku Mask)", self.player).access_rule = self.multiworld.get_location("Happy Mask Salesman (Song of Healing)", self.player).access_rule
 
         # Do not allow button activations on buttons.
         #self.multiworld.get_location("The Big Red Button", self.player).item_rule =\
