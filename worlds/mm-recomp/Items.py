@@ -31,6 +31,18 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000097,
         type=ItemClassification.progression
     ),
+    "Swamp Title Deed": MMRItemData(
+        code=0x34769420000098,
+        type=ItemClassification.progression
+    ),
+    "Mountain Title Deed": MMRItemData(
+        code=0x34769420000099,
+        type=ItemClassification.progression
+    ),
+    "Ocean Title Deed": MMRItemData(
+        code=0x3476942000009A,
+        type=ItemClassification.progression
+    ),
     "Ocarina of Time": MMRItemData(
         code=0x3476942000004C,
         type=ItemClassification.progression,

@@ -27,9 +27,41 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34769420000096
     ),
-    "Land Title Trade": MMRLocationData(
+    "Moon's Tear Trade": MMRLocationData(
         region="Clock Town",
         address=0x34769420000097
+    ),
+    "Swamp Deku Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000098
+    ),
+    "Mountain Deku Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000099
+    ),
+    "Ocean Deku Trade": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942000009A
+    ),
+    "Moon's Tear Trade Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420056F0A
+    ),
+    "Swamp Deku Trade Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942005451E
+    ),
+    "Mountain Deku Trade Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420054D1E
+    ),
+    "Ocean Deku Trade Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420054C1E
+    ),
+    "Canyon Deku Trade Freestanding HP": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942005131E
     ),
     "Top of Clock Tower (Ocarina of Time)": MMRLocationData(
         region="Clock Town",
@@ -46,10 +78,6 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Happy Mask Salesman (Deku Mask)": MMRLocationData(
         region="Clock Town",
         address=0x34769420000078
-    ),
-    "South Clock Town Freestanding HP": MMRLocationData(
-        region="Clock Town",
-        address=0x34769420056F0A
     ),
     "East Clock Town Chest": MMRLocationData(
         region="Clock Town",
@@ -283,10 +311,6 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x347694200000AA
     ),
-    "Stock Pot Inn Kafei's Request": MMRLocationData(
-        region="Clock Town",
-        address=0x347694200000AB
-    ),
     "Stock Pot Inn Knife Chamber Chest": MMRLocationData(
         region="Clock Town",
         address=0x34769420066100
@@ -346,6 +370,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Romani Ranch Grog": MMRLocationData(
         region="Clock Town",
         address=0x3476942000007F
+    ),
+    "Laundry Pool Kafei's Request": MMRLocationData(
+        region="Clock Town",
+        address=0x347694200000AB
     ),
     "Laundry Pool Curiosity Shop Salesman #1": MMRLocationData(
         region="Clock Town",
@@ -430,6 +458,10 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Southern Swamp Kotake Request": MMRLocationData(
         region="Clock Town",
         address=0x34769420000059
+    ),
+    "Southern Swamp Koume Tour Gift": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000043
     ),
     "Mystery Woods Grotto Chest": MMRLocationData(
         region="Clock Town",

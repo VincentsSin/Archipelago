@@ -88,7 +88,7 @@ class MMRWorld(World):
     def set_rules(self) -> None:
         self.multiworld.get_location("North Clock Town Great Fairy Reward (Non-Human)", self.player).access_rule = lambda state: state.has("Stray Fairy (Clock Town)", self.player) and state.has("Deku Mask", self.player)
         self.multiworld.get_location("Astral Observatory", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player) and state.has("Deku Mask", self.player)
-        self.multiworld.get_location("Land Title Trade", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
+        self.multiworld.get_location("Moon's Tear Trade", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
         #self.multiworld.get_location("Heart Piece (South Clock Town)", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
         #self.multiworld.get_location("Chest (East Clock Town)", self.player).access_rule = lambda state: state.has("Deku Mask", self.player)
 
