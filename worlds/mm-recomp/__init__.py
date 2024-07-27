@@ -6,8 +6,8 @@ from worlds.AutoWorld import WebWorld, World
 from .Items import MMRItem, item_data_table, item_table
 from .Locations import MMRLocation, location_data_table, location_table, locked_locations
 from .Options import mmr_options
-from .Regions import region_data_table
-#from .Rules import get_button_rule
+from .Regions import region_data_table, get_exit
+from .Rules import *
 
 
 class MMRWebWorld(WebWorld):
@@ -26,7 +26,7 @@ class MMRWebWorld(WebWorld):
 
 
 class MMRWorld(World):
-    """A dynamic text-adventure."""
+    """A Zelda game we're not completely burnt out on."""
 
     game = "The Majora's Mask Recompilation"
     data_version = 1
@@ -42,70 +42,75 @@ class MMRWorld(World):
         return MMRItem(name, item_data_table[name].type, item_data_table[name].code, self.player)
 
     def create_items(self) -> None:
+        mw = self.multiworld
+
         item_pool: List[MMRItem] = []
         item_pool_count: Dict[str, int] = {}
         for name, item in item_data_table.items():
-            if name not in item_pool_count:
-                item_pool_count[name] = 0
-            if item.code and item.can_create(self.multiworld, self.player):
+            item_pool_count[name] = 0
+            if item.code and item.can_create(mw, self.player):
                 while item_pool_count[name] < item.num_exist:
                     item_pool.append(self.create_item(name))
                     item_pool_count[name] += 1
-                    #self.options.local_items[self.player].add(name)
 
-        self.multiworld.itempool += item_pool
+        mw.itempool += item_pool
+
+        mw.push_precollected(self.create_item("Ocarina of Time"))
+        mw.push_precollected(self.create_item("Song of Time"))
+        mw.push_precollected(self.create_item("Kokiri Sword"))
 
     def create_regions(self) -> None:
+        player = self.player
+        mw = self.multiworld
+
         # Create regions.
         for region_name in region_data_table.keys():
-            region = Region(region_name, self.player, self.multiworld)
-            self.multiworld.regions.append(region)
+            region = Region(region_name, player, mw)
+            mw.regions.append(region)
 
         # Create locations.
         for region_name, region_data in region_data_table.items():
-            region = self.multiworld.get_region(region_name, self.player)
+            region = mw.get_region(region_name, player)
             region.add_locations({
                 location_name: location_data.address for location_name, location_data in location_data_table.items()
-                if location_data.region == region_name and location_data.can_create(self.multiworld, self.player)
+                if location_data.region == region_name and location_data.can_create(mw, player)
             }, MMRLocation)
-            region.add_exits(region_data_table[region_name].connecting_regions)
+            region.add_exits(region_data.connecting_regions)
 
         # Place locked locations.
         for location_name, location_data in locked_locations.items():
             # Ignore locations we never created.
-            if not location_data.can_create(self.multiworld, self.player):
+            if not location_data.can_create(mw, player):
                 continue
 
             locked_item = self.create_item(location_data_table[location_name].locked_item)
-            self.multiworld.get_location(location_name, self.player).place_locked_item(locked_item)
+            mw.get_location(location_name, player).place_locked_item(locked_item)
 
-        # Set priority location for the Big Red Button!
-        #self.multiworld.priority_locations[self.player].value.add("The Big Red Button")
+        # TODO: check options to see what player starts with
+        mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
+        mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
 
     def get_filler_item_name(self) -> str:
         return "Blue Rupee"
 
     def set_rules(self) -> None:
-        self.multiworld.get_location("North Clock Town Great Fairy Reward (Non-Human)", self.player).access_rule = lambda state: state.has("Stray Fairy (Clock Town)", self.player) and state.has("Deku Mask", self.player)
-        self.multiworld.get_location("Astral Observatory", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player) and state.has("Deku Mask", self.player)
-        self.multiworld.get_location("Moon's Tear Trade", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
-        #self.multiworld.get_location("Heart Piece (South Clock Town)", self.player).access_rule = lambda state: state.has("Moon's Tear", self.player)
-        #self.multiworld.get_location("Chest (East Clock Town)", self.player).access_rule = lambda state: state.has("Deku Mask", self.player)
+        player = self.player
+        mw = self.multiworld
 
-        self.multiworld.get_location("Top of Clock Tower (Ocarina of Time)", self.player).access_rule = lambda state: state.has("Progressive Magic Upgrade", self.player, 1)
-        self.multiworld.get_location("Top of Clock Tower (Song of Time)", self.player).access_rule = self.multiworld.get_location("Top of Clock Tower (Ocarina of Time)", self.player).access_rule
+        region_rules = get_region_rules(player)
+        for entrance_name, rule in region_rules.items():
+            entrance = mw.get_entrance(entrance_name, player)
+            entrance.access_rule = rule
 
-        #self.multiworld.get_location("Happy Mask Salesman (Song of Healing)", self.player).access_rule = lambda state: state.has("Ocarina of Time", self.player)
-        #self.multiworld.get_location("Happy Mask Salesman (Deku Mask)", self.player).access_rule = self.multiworld.get_location("Happy Mask Salesman (Song of Healing)", self.player).access_rule
-
-        # Do not allow button activations on buttons.
-        #self.multiworld.get_location("The Big Red Button", self.player).item_rule =\
-        #    lambda item: item.name != "Button Activation"
+        location_rules = get_location_rules(player)
+        for location in mw.get_locations(player):
+            name = location.name
+            if name in location_rules and location_data_table[name].can_create(mw, player):
+                location.access_rule = location_rules[name]
 
         # Completion condition.
-        #self.multiworld.completion_condition[self.player] = lambda state: state.has("A Trophy", self.player)
+        mw.completion_condition[player] = lambda state: state.has("Victory", player)
 
     def fill_slot_data(self):
         return {
-            #"color": getattr(self.multiworld, "color")[self.player].current_key
         }

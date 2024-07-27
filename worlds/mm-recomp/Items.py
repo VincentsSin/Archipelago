@@ -35,14 +35,14 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000098,
         type=ItemClassification.progression
     ),
-    "Mountain Title Deed": MMRItemData(
-        code=0x34769420000099,
-        type=ItemClassification.progression
-    ),
-    "Ocean Title Deed": MMRItemData(
-        code=0x3476942000009A,
-        type=ItemClassification.progression
-    ),
+    # ~ "Mountain Title Deed": MMRItemData(
+        # ~ code=0x34769420000099,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    # ~ "Ocean Title Deed": MMRItemData(
+        # ~ code=0x3476942000009A,
+        # ~ type=ItemClassification.progression
+    # ~ ),
     "Ocarina of Time": MMRItemData(
         code=0x3476942000004C,
         type=ItemClassification.progression,
@@ -65,18 +65,18 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420040061,
         type=ItemClassification.progression
     ),
-    "Goron's Lullaby": MMRItemData(
-        code=0x34769420040062,
-        type=ItemClassification.progression
-    ),
-    "New Wave Bossa Nova": MMRItemData(
-        code=0x34769420040063,
-        type=ItemClassification.progression
-    ),
-    "Elegy of Emptiness": MMRItemData(
-        code=0x34769420040064,
-        type=ItemClassification.progression
-    ),
+    # ~ "Goron's Lullaby": MMRItemData(
+        # ~ code=0x34769420040062,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    # ~ "New Wave Bossa Nova": MMRItemData(
+        # ~ code=0x34769420040063,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    # ~ "Elegy of Emptiness": MMRItemData(
+        # ~ code=0x34769420040064,
+        # ~ type=ItemClassification.progression
+    # ~ ),
     "Oath to Order": MMRItemData(
         code=0x34769420040065,
         type=ItemClassification.progression
@@ -96,6 +96,10 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Song of Soaring": MMRItemData(
         code=0x3476942004006A,
+        type=ItemClassification.progression
+    ),
+    "Song of Storms": MMRItemData(
+        code=0x3476942004006B,
         type=ItemClassification.progression
     ),
     "Deku Mask": MMRItemData(
@@ -255,10 +259,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000027,
         type=ItemClassification.progression
     ),
-    "Pictograph Box": MMRItemData(
-        code=0x34769420000043,
-        type=ItemClassification.progression
-    ),
+    # ~ "Pictograph Box": MMRItemData(
+        # ~ code=0x34769420000043,
+        # ~ type=ItemClassification.progression
+    # ~ ),
     "Lens of Truth": MMRItemData(
         code=0x34769420000042,
         type=ItemClassification.progression
@@ -267,8 +271,12 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000041,
         type=ItemClassification.progression
     ),
-    "Mirror Shield": MMRItemData(
-        code=0x34769420000033,
+    # ~ "Mirror Shield": MMRItemData(
+        # ~ code=0x34769420000033,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    "Powder Keg": MMRItemData(
+        code=0x34769420000034,
         type=ItemClassification.progression
     ),
     "Magic Bean": MMRItemData(
@@ -284,93 +292,93 @@ item_data_table: Dict[str, MMRItemData] = {
         type=ItemClassification.progression
     ),
     "Stray Fairy (Woodfall)": MMRItemData(
-        code=0x34769420010001,
+        code=0x34769420010000,
         type=ItemClassification.progression,
         num_exist=15
     ),
-    "Stray Fairy (Snowhead)": MMRItemData(
-        code=0x34769420010002,
-        type=ItemClassification.progression,
-        num_exist=15
-    ),
-    "Stray Fairy (Great Bay)": MMRItemData(
-        code=0x34769420010003,
-        type=ItemClassification.progression,
-        num_exist=15
-    ),
-    "Stray Fairy (Stone Tower)": MMRItemData(
-        code=0x34769420010004,
-        type=ItemClassification.progression,
-        num_exist=15
-    ),
+    # ~ "Stray Fairy (Snowhead)": MMRItemData(
+        # ~ code=0x34769420010001,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=15
+    # ~ ),
+    # ~ "Stray Fairy (Great Bay)": MMRItemData(
+        # ~ code=0x34769420010002,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=15
+    # ~ ),
+    # ~ "Stray Fairy (Stone Tower)": MMRItemData(
+        # ~ code=0x34769420010003,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=15
+    # ~ ),
     "Small Key (Woodfall)": MMRItemData(
-        code=0x34769420090178,
+        code=0x34769420090078,
         type=ItemClassification.progression,
         num_exist=1
     ),
-    "Small Key (Snowhead)": MMRItemData(
-        code=0x34769420090278,
-        type=ItemClassification.progression,
-        num_exist=3
-    ),
-    "Small Key (Great Bay)": MMRItemData(
-        code=0x34769420090378,
-        type=ItemClassification.progression,
-        num_exist=1
-    ),
-    "Small Key (Stone Tower)": MMRItemData(
-        code=0x34769420090478,
-        type=ItemClassification.progression,
-        num_exist=3
-    ),
+    # ~ "Small Key (Snowhead)": MMRItemData(
+        # ~ code=0x34769420090178,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=3
+    # ~ ),
+    # ~ "Small Key (Great Bay)": MMRItemData(
+        # ~ code=0x34769420090278,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=1
+    # ~ ),
+    # ~ "Small Key (Stone Tower)": MMRItemData(
+        # ~ code=0x34769420090378,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=3
+    # ~ ),
     "Dungeon Map (Woodfall)": MMRItemData(
-        code=0x34769420090176,
+        code=0x34769420090076,
         type=ItemClassification.useful
     ),
-    "Dungeon Map (Snowhead)": MMRItemData(
-        code=0x34769420090276,
-        type=ItemClassification.useful
-    ),
-    "Dungeon Map (Great Bay)": MMRItemData(
-        code=0x34769420090376,
-        type=ItemClassification.useful
-    ),
-    "Dungeon Map (Stone Tower)": MMRItemData(
-        code=0x34769420090476,
-        type=ItemClassification.useful
-    ),
+    # ~ "Dungeon Map (Snowhead)": MMRItemData(
+        # ~ code=0x34769420090176,
+        # ~ type=ItemClassification.useful
+    # ~ ),
+    # ~ "Dungeon Map (Great Bay)": MMRItemData(
+        # ~ code=0x34769420090276,
+        # ~ type=ItemClassification.useful
+    # ~ ),
+    # ~ "Dungeon Map (Stone Tower)": MMRItemData(
+        # ~ code=0x34769420090376,
+        # ~ type=ItemClassification.useful
+    # ~ ),
     "Compass (Woodfall)": MMRItemData(
-        code=0x34769420090175,
+        code=0x34769420090075,
         type=ItemClassification.useful
     ),
-    "Compass (Snowhead)": MMRItemData(
-        code=0x34769420090275,
-        type=ItemClassification.useful
-    ),
-    "Compass (Great Bay)": MMRItemData(
-        code=0x34769420090375,
-        type=ItemClassification.useful
-    ),
-    "Compass (Stone Tower)": MMRItemData(
-        code=0x34769420090475,
-        type=ItemClassification.useful
-    ),
+    # ~ "Compass (Snowhead)": MMRItemData(
+        # ~ code=0x34769420090175,
+        # ~ type=ItemClassification.useful
+    # ~ ),
+    # ~ "Compass (Great Bay)": MMRItemData(
+        # ~ code=0x34769420090275,
+        # ~ type=ItemClassification.useful
+    # ~ ),
+    # ~ "Compass (Stone Tower)": MMRItemData(
+        # ~ code=0x34769420090375,
+        # ~ type=ItemClassification.useful
+    # ~ ),
     "Boss Key (Woodfall)": MMRItemData(
-        code=0x34769420090174,
+        code=0x34769420090074,
         type=ItemClassification.progression
     ),
-    "Boss Key (Snowhead)": MMRItemData(
-        code=0x34769420090274,
-        type=ItemClassification.progression
-    ),
-    "Boss Key (Great Bay)": MMRItemData(
-        code=0x34769420090374,
-        type=ItemClassification.progression
-    ),
-    "Boss Key (Stone Tower)": MMRItemData(
-        code=0x34769420090474,
-        type=ItemClassification.progression
-    ),
+    # ~ "Boss Key (Snowhead)": MMRItemData(
+        # ~ code=0x34769420090174,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    # ~ "Boss Key (Great Bay)": MMRItemData(
+        # ~ code=0x34769420090274,
+        # ~ type=ItemClassification.progression
+    # ~ ),
+    # ~ "Boss Key (Stone Tower)": MMRItemData(
+        # ~ code=0x34769420090374,
+        # ~ type=ItemClassification.progression
+    # ~ ),
     "Odolwa's Remains": MMRItemData(
         code=0x34769420000055,
         type=ItemClassification.progression
@@ -427,25 +435,17 @@ item_data_table: Dict[str, MMRItemData] = {
     "Purple Rupee": MMRItemData(
         code=0x34769420000005,
         type=ItemClassification.useful,
-        num_exist=6
+        num_exist=7
     ),
     "Silver Rupee": MMRItemData(
         code=0x34769420000006,
         type=ItemClassification.useful,
         num_exist=9
     ),
-    # ~ "Blue Rupee": MMRItemData(
-        # ~ code=0x34769420000002,
-        # ~ type=ItemClassification.filler#,
-        # ~ #can_create=lambda multiworld, player: bool(getattr(multiworld, "hard_mode")[player]),
-    # ~ ),
-    # ~ "A Tin of Mints": MMRItemData(
-        # ~ code=7430002#,
-        # ~ #can_create=lambda multiworld, player: False  # Only created from `get_filler_item_name`.
-    # ~ ),
-    # ~ "The Urge to Push": CliqueItemData(
-        # ~ type=ItemClassification.progression,
-    # ~ ),
+    "Victory": MMRItemData(
+        type=ItemClassification.progression,
+        can_create=lambda state: False
+    ),
 }
 
 item_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
