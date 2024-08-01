@@ -53,13 +53,16 @@ item_data_table: Dict[str, MMRItemData] = {
         type=ItemClassification.useful,
         num_exist=52
     ),
-    "Adult's Wallet": MMRItemData(
-        code=0x34769420000008,
-        type=ItemClassification.progression
+    "Heart Container": MMRItemData(
+        code=0x3476942000000D,
+        type=ItemClassification.useful,
+        num_exist=1
+        #num_exist=4
     ),
-    "Giant's Wallet": MMRItemData(
-        code=0x34769420000009,
-        type=ItemClassification.progression
+    "Progressive Wallet": MMRItemData(
+        code=0x34769420000008,
+        type=ItemClassification.progression,
+        num_exist=2
     ),
     "Sonata of Awakening": MMRItemData(
         code=0x34769420040061,
@@ -218,34 +221,20 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x3476942000006F,
         type=ItemClassification.progression
     ),
-    "Kokiri Sword": MMRItemData(
+    "Progressive Sword": MMRItemData(
         code=0x34769420000037,
         type=ItemClassification.progression,
-        can_create=lambda multiworld, player: False
-    ),
-    "Razor Sword": MMRItemData(
-        code=0x34769420000038,
-        type=ItemClassification.progression
-    ),
-    "Gilded Sword": MMRItemData(
-        code=0x34769420000039,
-        type=ItemClassification.progression
+        num_exist=2
+        #num_exist=3
     ),
     "Great Fairy Sword": MMRItemData(
         code=0x3476942000003B,
         type=ItemClassification.progression
     ),
-    "Hero's Bow": MMRItemData(
+    "Progressive Bow": MMRItemData(
         code=0x34769420000022,
-        type=ItemClassification.progression
-    ),
-    "Large Quiver": MMRItemData(
-        code=0x34769420000023,
-        type=ItemClassification.progression
-    ),
-    "Largest Quiver": MMRItemData(
-        code=0x34769420000024,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        num_exist=3
     ),
     "Fire Arrow": MMRItemData(
         code=0x34769420000025,
@@ -395,17 +384,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000058,
         type=ItemClassification.progression
     ),
-    "Bomb Bag": MMRItemData(
+    "Progressive Bomb Bag": MMRItemData(
         code=0x3476942000001B,
-        type=ItemClassification.progression
-    ),
-    "Big Bomb Bag": MMRItemData(
-        code=0x3476942000001C,
-        type=ItemClassification.progression
-    ),
-    "Biggest Bomb Bag": MMRItemData(
-        code=0x3476942000001D,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        num_exist=3
     ),
     "Bombchu (1)": MMRItemData(
         code=0x34769420000036,

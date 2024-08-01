@@ -57,7 +57,7 @@ class MMRWorld(World):
 
         mw.push_precollected(self.create_item("Ocarina of Time"))
         mw.push_precollected(self.create_item("Song of Time"))
-        mw.push_precollected(self.create_item("Kokiri Sword"))
+        mw.push_precollected(self.create_item("Progressive Sword"))
 
     def create_regions(self) -> None:
         player = self.player

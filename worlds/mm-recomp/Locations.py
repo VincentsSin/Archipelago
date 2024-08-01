@@ -45,11 +45,11 @@ location_data_table: Dict[str, MMRLocationData] = {
     ),
     "Laundry Pool Curiosity Shop Salesman #1": MMRLocationData(
         region="Clock Town",
-        address=0x347694200000A1
+        address=0x34769420000080
     ),
     "Laundry Pool Curiosity Shop Salesman #2": MMRLocationData(
         region="Clock Town",
-        address=0x34769420000080
+        address=0x347694200000A1
     ),
     "South Clock Town Corner Chest": MMRLocationData(
         region="Clock Town",
@@ -195,7 +195,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Termina Field",
         address=0x34769420062D02
     ),
-    "Termina Tall Grass": MMRLocationData(
+    "Termina Tall Grass Chest": MMRLocationData(
         region="Termina Field",
         address=0x34769420062D01
     ),
@@ -231,10 +231,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Romani Ranch",
         address=0x3476942000007F
     ),
-    "Romani Ranch Helping Cremia": MMRLocationData(
-        region="Romani Ranch",
-        address=0x34769420000082
-    ),
+    # ~ "Romani Ranch Helping Cremia": MMRLocationData(
+        # ~ region="Romani Ranch",
+        # ~ address=0x34769420000082
+    # ~ ),
     "Road to Swamp Tree HP": MMRLocationData(
         region="Southern Swamp",
         address=0x34769420054001
@@ -263,10 +263,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x34769420000043
     ),
-    "Southern Swamp Swamphouse Reward": MMRLocationData(
-        region="Clock Town",
-        address=0x3476942000008A
-    ),
+    # ~ "Southern Swamp Swamphouse Reward": MMRLocationData(
+        # ~ region="Clock Town",
+        # ~ address=0x3476942000008A
+    # ~ ),
     "Deku Palace HP": MMRLocationData(
         region="Deku Palace",
         address=0x34769420052B1E
@@ -382,6 +382,14 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Woodfall Temple Final Room Bubble SF": MMRLocationData(
         region="Woodfall Temple",
         address=0x34769420011B2D
+    ),
+    "Woodfall Temple Heart Container": MMRLocationData(
+        region="Woodfall Temple",
+        address=0x34769420051F00
+    ),
+    "Woodfall Temple Odolwa's Remains": MMRLocationData(
+        region="Woodfall Temple",
+        address=0x34769420000055
     ),
     # ~ "Mountain Deku Trade": MMRLocationData(
         # ~ region="Clock Town",
