@@ -81,9 +81,9 @@ def get_location_rules(player):
             lambda state: state.has("Deku Mask", player),
         "North Clock Town Old Lady":
             lambda state: state.has("Progressive Sword", player),
-        "North Clock Town Great Fairy Reward (Non-Human)":
+        "North Clock Town Great Fairy Reward (Has Deku Mask)":
             lambda state: state.has("Stray Fairy (Clock Town)", player) and state.has("Deku Mask", player),
-        "North Clock Town Great Fairy Reward (Human)":
+        "North Clock Town Great Fairy Reward":
             lambda state: state.has("Stray Fairy (Clock Town)", player),
         "West Clock Town Swordsman Expert Course":
             lambda state: state.has("Progressive Sword", player),
@@ -195,6 +195,12 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player) and (state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player)),
         "Woodfall Temple Odolwa's Remains":
             lambda state: state.has("Progressive Bow", player) and (state.has("Boss Key (Woodfall)", player) or state.has("Odolwa's Remains", player)),
+
+
+        "Road to Ikana Pillar Chest":
+            lambda state: state.has("Hookshot", player),
+        "Road to Ikana Rock Grotto Chest":
+            lambda state: state.has("Goron Mask", player),
 
 
         "Defeat Majora":
