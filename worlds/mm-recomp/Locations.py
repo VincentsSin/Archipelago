@@ -15,6 +15,10 @@ class MMRLocationData(NamedTuple):
 
 
 location_data_table: Dict[str, MMRLocationData] = {
+    "Keaton Quiz": MMRLocationData(
+        region="Clock Town",
+        address=0x3476942007028C
+    ),
     "Clock Tower Happy Mask Salesman #1": MMRLocationData(
         region="Clock Town",
         address=0x34769420040068
@@ -83,6 +87,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34769420061700
     ),
+    "East Clock Town Sewer Chest": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420062900
+    ),
+    "East Clock Town Astral Observatory": MMRLocationData(
+        region="Clock Town",
+        address=0x34769420000096
+    ),
     "North Clock Town Tree HP": MMRLocationData(
         region="Clock Town",
         address=0x34769420056E0A
@@ -99,11 +111,11 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3476942000008D
     ),
-    "North Clock Town Great Fairy Reward (Non-Human)": MMRLocationData(
+    "North Clock Town Great Fairy Reward": MMRLocationData(
         region="Clock Town",
         address=0x34769420030000
     ),
-    "North Clock Town Great Fairy Reward (Human)": MMRLocationData(
+    "North Clock Town Great Fairy Reward (Has Deku Mask)": MMRLocationData(
         region="Clock Town",
         address=0x34769420000086
     ),
@@ -130,10 +142,6 @@ location_data_table: Dict[str, MMRLocationData] = {
     "West Clock Town Priority Mail to Postman": MMRLocationData(
         region="Clock Town",
         address=0x34769420000084
-    ),
-    "Astral Observatory": MMRLocationData(
-        region="Clock Town",
-        address=0x34769420000096
     ),
     "Moon's Tear Trade": MMRLocationData(
         region="Clock Town",
@@ -267,6 +275,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         # ~ region="Clock Town",
         # ~ address=0x3476942000008A
     # ~ ),
+    "Southern Swamp Near Swamphouse Grotto Chest": MMRLocationData(
+        region="Southern Swamp (Deku Palace)",
+        address=0x3476942006071D
+    ),
+    "Southern Swamp Song Tablet": MMRLocationData(
+        region="Southern Swamp (Deku Palace)",
+        address=0x3476942004006A
+    ),
     "Deku Palace HP": MMRLocationData(
         region="Deku Palace",
         address=0x34769420052B1E
@@ -282,14 +298,6 @@ location_data_table: Dict[str, MMRLocationData] = {
     "Deku Palace Butler Race": MMRLocationData(
         region="Southern Swamp (Deku Palace)",
         address=0x3476942000008E
-    ),
-    "Woodfall Near Swamphouse Grotto Chest": MMRLocationData(
-        region="Southern Swamp (Deku Palace)",
-        address=0x3476942006071D
-    ),
-    "Woodfall Song Engraving": MMRLocationData(
-        region="Southern Swamp (Deku Palace)",
-        address=0x3476942004006A
     ),
     "Woodfall Near Owl Statue Chest": MMRLocationData(
         region="Woodfall",
@@ -487,14 +495,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         # ~ region="Clock Town",
         # ~ address=0x3476942001492F
     # ~ ),
-    # ~ "Road to Ikana Pillar Chest": MMRLocationData(
-        # ~ region="Termina Field",
-        # ~ address=0x34769420065300
-    # ~ ),
-    # ~ "Road to Ikana Rock Grotto Chest": MMRLocationData(
-        # ~ region="Termina Field",
-        # ~ address=0x34769420060716
-    # ~ ),
+    "Road to Ikana Pillar Chest": MMRLocationData(
+        region="Termina Field",
+        address=0x34769420065300
+    ),
+    "Road to Ikana Rock Grotto Chest": MMRLocationData(
+        region="Termina Field",
+        address=0x34769420060716
+    ),
     # ~ "Graveyard Day 1 Chest": MMRLocationData(
         # ~ region="Clock Town",
         # ~ address=0x34769420060C03

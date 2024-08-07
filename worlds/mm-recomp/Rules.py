@@ -7,7 +7,7 @@ def can_get_magic_beans(state, player):
     return state.has("Magic Bean", player) or (state.has("Deku Mask", player) and state.can_reach("Deku Palace", 'Region', player))
 
 def has_projectiles(state, player):
-    return state.has("Progressive Bow", player) or (state.has("Deku Mask", player) and state.has("Progressive Magic Meter", player)) or state.has("Zora Mask", player) or state.has("Hookshot", player)
+    return state.has("Progressive Bow", player) or (state.has("Deku Mask", player) and state.has("Progressive Magic Upgrade", player)) or state.has("Zora Mask", player) or state.has("Hookshot", player)
 
 def can_smack_hard(state, player):
     return state.has("Progressive Sword", player) or state.has("Great Fairy Sword", player) or state.has("Goron Mask", player) or state.has("Zora Mask", player)
@@ -43,6 +43,8 @@ def get_region_rules(player):
 
 def get_location_rules(player):
     return {
+        "Keaton Quiz":
+            lambda state: state.has("Keaton Mask", player),
         "Clock Tower Happy Mask Salesman #1":
             lambda state: state.has("Ocarina of Time", player),
         "Clock Tower Happy Mask Salesman #2":
@@ -69,6 +71,12 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player),
         "East Clock Town Treasure Game Chest":
             lambda state: state.has("Goron Mask", player),
+        "East Clock Town Sewer Chest":
+            lambda state: has_projectiles(state, player),
+        "East Clock Town Astral Observatory":
+            lambda state: has_projectiles(state, player),
+        "North Clock Town Deku Playground Any Day":
+            lambda state: state.has("Deku Mask", player),
         "North Clock Town Deku Playground All Days":
             lambda state: state.has("Deku Mask", player),
         "North Clock Town Old Lady":
@@ -89,8 +97,6 @@ def get_location_rules(player):
             lambda state: state.has("Fierce Deity's Mask", player) and state.has("Great Fairy's Sword", player),
         "West Clock Town Priority Mail to Postman":
             lambda state: state.has("Priority Mail", player),
-        "Astral Observatory":
-            lambda state: has_projectiles(state, player),
         "Moon's Tear Trade":
             lambda state: state.has("Moon's Tear", player),
         "Top of Clock Tower (Ocarina of Time)":
@@ -145,6 +151,8 @@ def get_location_rules(player):
             lambda state: state.has("Bottle of Red Potion", player),
         "Southern Swamp Swamphouse Reward":
             lambda state: can_smack(state, player) and state.has("Sonata of Awakening", player) and state.has("Ocarina of Time", player) and state.has("Deku Mask", player) and (state.has("Hookshot", player) or can_plant_beans(state, player)),
+        "Southern Swamp Song Tablet":
+            lambda state: state.has("Deku Mask", player),
 
 
         "Deku Palace Bean Grotto Chest":
