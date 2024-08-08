@@ -42,13 +42,16 @@ def can_use_magic_arrow(item, state, player):
     return state.has(item, player) and state.has("Progressive Bow", player) and state.has("Progressive Magic Upgrade", player)
 
 def can_use_fire_arrows(state, player):
-    return can_use_magic_arrow("Fire Arrows", state, player)
+    return can_use_magic_arrow("Fire Arrow", state, player)
 
 def can_use_ice_arrows(state, player):
-    return can_use_magic_arrow("Ice Arrows", state, player)
+    return can_use_magic_arrow("Ice Arrow", state, player)
 
 def can_use_light_arrows(state, player):
-    return can_use_magic_arrow("Light Arrows", state, player)
+    return can_use_magic_arrow("Light Arrow", state, player)
+
+def has_gilded_sword(state, player):
+    return state.has("Progressive Sword", player, 3)
 
 def get_region_rules(player):
     return {
@@ -115,9 +118,9 @@ def get_location_rules(player):
         "West Clock Town Rosa Sisters":
             lambda state: state.has("Kamaro Mask", player),
         "West Clock Town Bank 200 Rupees":
-            lambda state: state.has("Progressive Sword", player),
+            lambda state: state.has("Progressive Sword", player) and state.has("Progressive Wallet", player, 2),
         "West Clock Town Bank 1000 Rupees":
-            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Great Fairy's Sword", player),
+            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Great Fairy's Sword", player) and state.has("Progressive Wallet", player, 3),
         "West Clock Town Priority Mail to Postman":
             lambda state: state.has("Priority Mail", player),
         "Moon's Tear Trade":
@@ -229,5 +232,5 @@ def get_location_rules(player):
 
 
         "Defeat Majora":
-            lambda state: state.has("Progressive Magic Upgrade", player) and (state.has("Fierce Deity's Mask", player) or (state.has("Great Fairy Sword", player) or state.has("Gilded Sword", player)) and state.has("Progressive Bow", player))
+            lambda state: state.has("Progressive Magic Upgrade", player) and (state.has("Fierce Deity's Mask", player) or (state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) and state.has("Progressive Bow", player))
     }
