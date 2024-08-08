@@ -58,7 +58,7 @@ def get_region_rules(player):
         "Clock Town -> The Moon":
             lambda state: state.has("Ocarina of Time", player) and state.has("Oath to Order", player) and state.has("Odolwa's Remains", player) and state.has("Goht's Remains", player) and state.has("Gyorg's Remains", player) and state.has("Twinmold's Remains", player),
         "Southern Swamp -> Southern Swamp (Deku Palace)":
-            lambda state: state.has("Bottle of Red Potion", player) or (has_projectiles(state, player) and state.has("Deku Mask", player)), # or state.has("Pictograph Box")
+            lambda state: state.has("Bottle of Red Potion", player) or (has_projectiles(state, player) and state.has("Deku Mask", player)), # or state.has("Pictograph Box", player)
         "Southern Swamp (Deku Palace) -> Deku Palace":
             lambda state: state.has("Deku Mask", player),
         "Southern Swamp (Deku Palace) -> Woodfall":
@@ -148,7 +148,7 @@ def get_location_rules(player):
         "Milk Bar Show":
             lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player),
         "Milk Bar Priority Mail to Aroma":
-            lambda state: state.has("Kafei's Mask", player) and state.has("Priority Mail", player),
+            lambda state: state.has("Romani Mask", player) and state.has("Kafei's Mask", player) and state.has("Priority Mail", player),
 
 
         "Termina Stump Chest":
@@ -233,8 +233,10 @@ def get_location_rules(player):
             lambda state: state.has("Hookshot", player),
         "Road to Ikana Rock Grotto Chest":
             lambda state: state.has("Goron Mask", player),
+        "Road to Ikana Stone Soldier":
+            lambda state: can_play_song("Epona's Song", state, player) and has_bottle(state, player),
 
 
         "Defeat Majora":
-            lambda state: state.has("Progressive Magic Upgrade", player) and (state.has("Fierce Deity's Mask", player) or (state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) and state.has("Progressive Bow", player))
+            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Progressive Magic Upgrade", player) and ((state.has("Great Fairy Sword", player) or has_gilded_sword(state, player)) and state.has("Progressive Bow", player))
     }
