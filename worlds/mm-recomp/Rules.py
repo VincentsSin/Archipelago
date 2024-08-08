@@ -122,9 +122,9 @@ def get_location_rules(player):
         "West Clock Town Rosa Sisters":
             lambda state: state.has("Kamaro Mask", player),
         "West Clock Town Bank 200 Rupees":
-            lambda state: state.has("Progressive Sword", player) and state.has("Progressive Wallet", player, 2),
+            lambda state: state.has("Progressive Sword", player) and state.has("Progressive Wallet", player, 1),
         "West Clock Town Bank 1000 Rupees":
-            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Great Fairy's Sword", player) and state.has("Progressive Wallet", player, 3),
+            lambda state: state.has("Fierce Deity's Mask", player) and state.has("Great Fairy's Sword", player) and state.has("Progressive Wallet", player, 2),
         "West Clock Town Priority Mail to Postman":
             lambda state: state.has("Priority Mail", player),
         "Moon's Tear Trade":
