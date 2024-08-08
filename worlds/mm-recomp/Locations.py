@@ -115,7 +115,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34769420030000
     ),
-    "North Clock Town Great Fairy Reward (Has Deku Mask)": MMRLocationData(
+    "North Clock Town Great Fairy Reward (Transformation Mask)": MMRLocationData(
         region="Clock Town",
         address=0x34769420000086
     ),
