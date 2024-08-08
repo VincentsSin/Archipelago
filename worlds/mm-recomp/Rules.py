@@ -6,6 +6,12 @@ from BaseClasses import CollectionState, MultiWorld
 def can_get_magic_beans(state, player):
     return state.has("Magic Bean", player) or (state.has("Deku Mask", player) and state.can_reach("Deku Palace", 'Region', player))
 
+def has_bombchus(state, player):
+    return state.has("Bombchu (1)", player) or state.has("Bombchu (5)", player) or state.has("Bombchu (10)", player)
+
+def has_explosives(state, player):
+    return state.has("Progressive Bomb Bag", player) or has_bombchus(state, player)
+
 def has_projectiles(state, player):
     return state.has("Progressive Bow", player) or (state.has("Deku Mask", player) and state.has("Progressive Magic Upgrade", player)) or state.has("Zora Mask", player) or state.has("Hookshot", player)
 
@@ -72,7 +78,7 @@ def get_location_rules(player):
         "East Clock Town Treasure Game Chest":
             lambda state: state.has("Goron Mask", player),
         "East Clock Town Sewer Chest":
-            lambda state: has_projectiles(state, player),
+            lambda state: has_explosives(state, player),
         "East Clock Town Astral Observatory":
             lambda state: has_projectiles(state, player),
         "North Clock Town Deku Playground Any Day":
@@ -157,6 +163,8 @@ def get_location_rules(player):
 
         "Deku Palace Bean Grotto Chest":
             lambda state: can_plant_beans(state, player) or state.has("Hookshot", player),
+        "Deku Palace Monkey Song":
+            lambda state: can_plant_beans(state, player),
         "Deku Palace Butler Race":
             lambda state: can_clear_woodfall(state, player),
         "Woodfall Near Swamphouse Grotto Chest":
