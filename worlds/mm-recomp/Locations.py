@@ -83,6 +83,14 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x3476942007011D
     ),
+    "East Clock Town Honey and Darling Any Day": MMRLocationData(
+        region="Clock Town",
+        address=0x347694200800B5
+    ),
+    "East Clock Town Honey and Darling All Days": MMRLocationData(
+        region="Clock Town",
+        address=0x347694200700B5
+    ),
     "East Clock Town Treasure Game Chest": MMRLocationData(
         region="Clock Town",
         address=0x34769420061700
@@ -115,7 +123,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Clock Town",
         address=0x34769420030000
     ),
-    "North Clock Town Great Fairy Reward (Transformation Mask)": MMRLocationData(
+    "North Clock Town Great Fairy Reward (Has Transformation Mask)": MMRLocationData(
         region="Clock Town",
         address=0x34769420000086
     ),

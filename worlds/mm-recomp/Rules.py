@@ -95,6 +95,10 @@ def get_location_rules(player):
             lambda state: state.has("Progressive Bow", player),
         "East Clock Town Shooting Gallery Perfect 50 Points":
             lambda state: state.has("Progressive Bow", player),
+        "East Clock Town Honey and Darling Any Day":
+            lambda state: state.has("Progressive Bow", player) or state.has("Progressive Bomb Bag", player) or has_bombchus(state, player),
+        "East Clock Town Honey and Darling All Days":
+            lambda state: state.has("Progressive Bow", player) and state.has("Progressive Bomb Bag", player) and has_bombchus(state, player),
         "East Clock Town Treasure Game Chest":
             lambda state: state.has("Goron Mask", player),
         "East Clock Town Sewer Chest":
