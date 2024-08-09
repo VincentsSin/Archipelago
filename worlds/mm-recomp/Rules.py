@@ -102,7 +102,7 @@ def get_location_rules(player):
         "East Clock Town Treasure Game Chest":
             lambda state: state.has("Goron Mask", player),
         "East Clock Town Sewer Chest":
-            lambda state: has_explosives(state, player),
+            lambda state: state.can_reach("Clock Town Hide-and-Seek", 'Location', player) and has_explosives(state, player),
         "East Clock Town Astral Observatory":
             lambda state: has_projectiles(state, player),
         "North Clock Town Deku Playground Any Day":
