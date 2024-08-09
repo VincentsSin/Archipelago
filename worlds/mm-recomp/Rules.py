@@ -234,7 +234,7 @@ def get_location_rules(player):
         "Road to Ikana Rock Grotto Chest":
             lambda state: state.has("Goron Mask", player),
         "Road to Ikana Stone Soldier":
-            lambda state: can_play_song("Epona's Song", state, player) and has_bottle(state, player),
+            lambda state: can_play_song("Epona's Song", state, player) and has_bottle(state, player) and state.has("Progressive Magic Upgrade", player) and state.has("Lens of Truth", player),
 
 
         "Defeat Majora":
