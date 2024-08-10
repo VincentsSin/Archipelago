@@ -1,6 +1,6 @@
 from typing import Dict
 
-from Options import Choice, Option, Toggle
+from Options import Choice, Option, Toggle, StartInventoryPool
 
 
 #class HardMode(Toggle):
@@ -26,9 +26,5 @@ from Options import Choice, Option, Toggle
 
 
 mmr_options: Dict[str, type(Option)] = {
-#    "color": ButtonColor,
-#    "hard_mode": HardMode,
-#
-#    # DeathLink is always on. Always.
-#    # "death_link": DeathLink,
+    "start_inventory_from_pool": StartInventoryPool
 }

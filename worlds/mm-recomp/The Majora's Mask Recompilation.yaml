@@ -35,8 +35,8 @@ requires:
   version: 0.4.5 # Version of Archipelago required for this yaml to work as expected.
 
 The Majora's Mask Recompilation:
-  progression_balancing: 99
-  accessibility: locations
+  progression_balancing: normal
+  accessibility: items
 
   local_items:
     # Forces these items to be in their native world.
@@ -48,6 +48,10 @@ The Majora's Mask Recompilation:
 
   start_inventory:
     # Start with these items.
+    {}
+
+  start_inventory_from_pool:
+    # Start with these items, and remove any that would be normally placed.
     {}
 
   start_hints:
