@@ -25,6 +25,15 @@ from Options import Choice, Option, Toggle, StartInventoryPool
 #    option_black = 11
 
 
+class LogicDifficulty(Choice):
+    """Set the logic difficulty used when generating."""
+    display_name = "Logic Difficulty"
+    option_easy = 0
+    option_no_logic = 4
+    default = 0
+
+
 mmr_options: Dict[str, type(Option)] = {
-    "start_inventory_from_pool": StartInventoryPool
+    "start_inventory_from_pool": StartInventoryPool,
+    "logic_difficulty": LogicDifficulty
 }

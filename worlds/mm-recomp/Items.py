@@ -4,7 +4,7 @@ from BaseClasses import Item, ItemClassification, MultiWorld
 
 
 class MMRItem(Item):
-    game = "The Majora's Mask Recompilation"
+    game = "Majora's Mask Recompiled"
 
 
 class MMRItemData(NamedTuple):

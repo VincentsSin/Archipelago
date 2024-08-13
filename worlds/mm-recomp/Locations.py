@@ -4,7 +4,7 @@ from BaseClasses import Location, MultiWorld
 
 
 class MMRLocation(Location):
-    game = "The Majora's Mask Recompilation"
+    game = "Majora's Mask Recompiled"
 
 
 class MMRLocationData(NamedTuple):
@@ -280,7 +280,7 @@ location_data_table: Dict[str, MMRLocationData] = {
         address=0x34769420000043
     ),
     # ~ "Southern Swamp Swamphouse Reward": MMRLocationData(
-        # ~ region="Clock Town",
+        # ~ region="Southern Swamp (Deku Palace)",
         # ~ address=0x3476942000008A
     # ~ ),
     "Southern Swamp Near Swamphouse Grotto Chest": MMRLocationData(

@@ -15,7 +15,7 @@ class MMRWebWorld(WebWorld):
     
     setup_en = Tutorial(
         tutorial_name="Start Guide",
-        description="A guide to playing the Majora's Mask Recomp.",
+        description="A guide to playing the Majora's Mask Recompilation in Archipelago.",
         language="English",
         file_name="guide_en.md",
         link="guide/en",
@@ -28,7 +28,7 @@ class MMRWebWorld(WebWorld):
 class MMRWorld(World):
     """A Zelda game we're not completely burnt out on."""
 
-    game = "The Majora's Mask Recompilation"
+    game = "Majora's Mask Recompiled"
     data_version = 1
     web = MMRWebWorld()
     option_definitions = mmr_options
@@ -97,6 +97,12 @@ class MMRWorld(World):
         player = self.player
         mw = self.multiworld
 
+        # Completion condition.
+        mw.completion_condition[player] = lambda state: state.has("Victory", player)
+
+        if (self.options.logic_difficulty == 4):
+            return
+
         region_rules = get_region_rules(player)
         for entrance_name, rule in region_rules.items():
             entrance = mw.get_entrance(entrance_name, player)
@@ -107,9 +113,6 @@ class MMRWorld(World):
             name = location.name
             if name in location_rules and location_data_table[name].can_create(mw, player):
                 location.access_rule = location_rules[name]
-
-        # Completion condition.
-        mw.completion_condition[player] = lambda state: state.has("Victory", player)
 
     def fill_slot_data(self):
         return {
