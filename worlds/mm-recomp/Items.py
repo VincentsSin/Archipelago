@@ -276,10 +276,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420000059,
         type=ItemClassification.progression
     ),
-    "Blue Potion": MMRItemData(
-        code=0x3476942000005D,
-        type=ItemClassification.progression
-    ),
+    # ~ "Blue Potion": MMRItemData(
+        # ~ code=0x3476942000005D,
+        # ~ type=ItemClassification.progression
+    # ~ ),
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x34769420010000,
         type=ItemClassification.progression,
