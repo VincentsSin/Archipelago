@@ -279,10 +279,130 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Southern Swamp",
         address=0x34769420000043
     ),
-    # ~ "Southern Swamp Swamphouse Reward": MMRLocationData(
-        # ~ region="Southern Swamp (Deku Palace)",
-        # ~ address=0x3476942000008A
-    # ~ ),
+    "Swamphouse First Room Pot Near Entrance Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006271E
+    ),
+    "Swamphouse First Room Crawling In Water Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062708
+    ),
+    "Swamphouse First Room Crawling Right Column Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270F
+    ),
+    "Swamphouse First Room Crawling Left Column Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062713
+    ),
+    "Swamphouse First Room Against Far Wall Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062700
+    ),
+    "Swamphouse First Room Left Bugpatch Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062709
+    ),
+    "Swamphouse First Room Right Bugpatch Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270C
+    ),
+    "Swamphouse First Room Upper Right Bugpatch Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270B
+    ),
+    "Swamphouse Monument Room Left Crate Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270A
+    ),
+    "Swamphouse Monument Room Right Crate Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006271B
+    ),
+    "Swamphouse Monument Room Crawling Wall Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270D
+    ),
+    "Swamphouse Monument Room Crawling On Monument Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006270E
+    ),
+    "Swamphouse Monument Room Behind Torch Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062702
+    ),
+    "Swamphouse Pottery Room Beehive #1 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062717
+    ),
+    "Swamphouse Pottery Room Beehive #2 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006271C
+    ),
+    "Swamphouse Pottery Room Small Pot Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062705
+    ),
+    "Swamphouse Pottery Room Left Large Pot Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062710
+    ),
+    "Swamphouse Pottery Room Right Large Pot Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062711
+    ),
+    "Swamphouse Pottery Room Behind Vines Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062714
+    ),
+    "Swamphouse Pottery Room Upper Wall Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062716
+    ),
+    "Swamphouse Golden Room Crawling Left Wall Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062719
+    ),
+    "Swamphouse Golden Room Crawling Right Column Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062704
+    ),
+    "Swamphouse Golden Room Against Far Wall Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062701
+    ),
+    "Swamphouse Golden Room Beehive Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062712
+    ),
+    "Swamphouse Tree Room Tall Grass #1 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062707
+    ),
+    "Swamphouse Tree Room Tall Grass #2 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062706
+    ),
+    "Swamphouse Tree Room Tree #1 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062715
+    ),
+    "Swamphouse Tree Room Tree #2 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x34769420062718
+    ),
+    "Swamphouse Tree Room Tree #3 Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006271D
+    ),
+    "Swamphouse Tree Room Beehive Token": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942006271A
+    ),
+    "Swamphouse Reward": MMRLocationData(
+        region="Swamphouse",
+        address=0x3476942000008A
+    ),
     "Southern Swamp Near Swamphouse Grotto Chest": MMRLocationData(
         region="Southern Swamp (Deku Palace)",
         address=0x3476942006071D

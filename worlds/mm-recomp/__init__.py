@@ -91,7 +91,7 @@ class MMRWorld(World):
         mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
 
     def get_filler_item_name(self) -> str:
-        return "Blue Rupee"
+        return "Purple Rupee"
 
     def set_rules(self) -> None:
         player = self.player

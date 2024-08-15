@@ -59,6 +59,11 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=1
         #num_exist=4
     ),
+    "Swamp Skulltula Token": MMRItemData(
+        code=0x34769420000052,
+        type=ItemClassification.progression,
+        num_exist=30
+    ),
     "Progressive Wallet": MMRItemData(
         code=0x34769420000008,
         type=ItemClassification.progression,
@@ -389,31 +394,31 @@ item_data_table: Dict[str, MMRItemData] = {
         type=ItemClassification.progression,
         num_exist=3
     ),
-    "Bombchu (1)": MMRItemData(
-        code=0x34769420000036,
-        type=ItemClassification.useful,
-        num_exist=4
-    ),
-    "Bombchu (5)": MMRItemData(
-        code=0x3476942000003A,
-        type=ItemClassification.useful,
-        num_exist=1
-    ),
+    # ~ "Bombchu (1)": MMRItemData(
+        # ~ code=0x34769420000036,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=4
+    # ~ ),
+    # ~ "Bombchu (5)": MMRItemData(
+        # ~ code=0x3476942000003A,
+        # ~ type=ItemClassification.progression,
+        # ~ num_exist=1
+    # ~ ),
     "Bombchu (10)": MMRItemData(
         code=0x3476942000001A,
         type=ItemClassification.progression,
         num_exist=1
     ),
-    "Blue Rupee": MMRItemData(
-        code=0x34769420000002,
-        type=ItemClassification.filler,
-        num_exist=2
-    ),
-    "Red Rupee": MMRItemData(
-        code=0x34769420000004,
-        type=ItemClassification.filler,
-        num_exist=23
-    ),
+    # ~ "Blue Rupee": MMRItemData(
+        # ~ code=0x34769420000002,
+        # ~ type=ItemClassification.filler,
+        # ~ num_exist=2
+    # ~ ),
+    # ~ "Red Rupee": MMRItemData(
+        # ~ code=0x34769420000004,
+        # ~ type=ItemClassification.filler,
+        # ~ num_exist=23
+    # ~ ),
     "Purple Rupee": MMRItemData(
         code=0x34769420000005,
         type=ItemClassification.useful,

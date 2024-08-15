@@ -59,6 +59,8 @@ def get_region_rules(player):
             lambda state: state.has("Ocarina of Time", player) and state.has("Oath to Order", player) and state.has("Odolwa's Remains", player) and state.has("Goht's Remains", player) and state.has("Gyorg's Remains", player) and state.has("Twinmold's Remains", player),
         "Southern Swamp -> Southern Swamp (Deku Palace)":
             lambda state: state.has("Bottle of Red Potion", player) or (has_projectiles(state, player) and state.has("Deku Mask", player)), # or state.has("Pictograph Box", player)
+        "Southern Swamp (Deku Palace) -> Swamphouse":
+            lambda state: state.has("Deku Mask", player) and can_use_fire_arrows(state, player),
         "Southern Swamp (Deku Palace) -> Deku Palace":
             lambda state: state.has("Deku Mask", player),
         "Southern Swamp (Deku Palace) -> Woodfall":
@@ -181,10 +183,72 @@ def get_location_rules(player):
             lambda state: state.has("Bottle of Red Potion", player),
         "Southern Swamp Near Swamphouse Grotto Chest":
             lambda state: state.has("Deku Mask", player),
-        # ~ "Southern Swamp Swamphouse Reward":
-            # ~ lambda state: can_smack(state, player) and state.has("Sonata of Awakening", player) and state.has("Ocarina of Time", player) and state.has("Deku Mask", player) and (state.has("Hookshot", player) or can_plant_beans(state, player)),
         "Southern Swamp Song Tablet":
             lambda state: state.has("Deku Mask", player),
+
+
+        "Swamphouse First Room Pot Near Entrance Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse First Room Crawling In Water Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse First Room Crawling Right Column Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player),
+        "Swamphouse First Room Crawling Left Column Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player),
+        "Swamphouse First Room Against Far Wall Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
+        "Swamphouse First Room Left Bugpatch Token":
+            lambda state: can_smack(state, player) and has_bottle(state, player),
+        "Swamphouse First Room Right Bugpatch Token":
+            lambda state: can_smack(state, player) and has_bottle(state, player),
+        "Swamphouse First Room Upper Right Bugpatch Token":
+            lambda state: can_smack(state, player) and has_bottle(state, player),
+        "Swamphouse Monument Room Left Crate Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Monument Room Right Crate Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Monument Room Crawling Wall Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
+        "Swamphouse Monument Room Crawling On Monument Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
+        "Swamphouse Monument Room Behind Torch Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Pottery Room Beehive #1 Token":
+            lambda state: can_smack(state, player) and has_projectiles(state, player),
+        "Swamphouse Pottery Room Beehive #2 Token":
+            lambda state: can_smack(state, player) and has_projectiles(state, player),
+        "Swamphouse Pottery Room Small Pot Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Pottery Room Left Large Pot Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Pottery Room Right Large Pot Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Pottery Room Behind Vines Token":
+            lambda state: can_smack_hard(state, player),
+        "Swamphouse Pottery Room Upper Wall Token":
+            lambda state: can_smack(state, player) and can_play_song("Sonata of Awakening", state, player) and state.has("Deku Mask", player) and state.has("Hookshot", player),
+        "Swamphouse Golden Room Crawling Left Wall Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_play_song("Sonata of Awakening", state, player) and state.has("Deku Mask", player),
+        "Swamphouse Golden Room Crawling Right Column Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player),
+        "Swamphouse Golden Room Against Far Wall Token":
+            lambda state: can_smack(state, player) and state.has("Hookshot", player) and can_plant_beans(state, player),
+        "Swamphouse Golden Room Beehive Token":
+            lambda state: can_smack(state, player) and has_projectiles(state, player),
+        "Swamphouse Tree Room Tall Grass #1 Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Tree Room Tall Grass #2 Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Tree Room Tree #1 Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Tree Room Tree #2 Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Tree Room Tree #3 Token":
+            lambda state: can_smack(state, player),
+        "Swamphouse Tree Room Beehive Token":
+            lambda state: can_smack(state, player) and has_projectiles(state, player),
+        "Southern Swamp Swamphouse Reward":
+            lambda state: state.has("Swamp Skulltula Token", player, 30),
 
 
         "Deku Palace Bean Grotto Chest":
