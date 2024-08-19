@@ -146,7 +146,7 @@ def get_location_rules(player):
         "Stock Pot Inn Granny Story #2":
             lambda state: state.has("All-Night Mask", player),
         "Stock Pot Inn Anju and Kafei":
-            lambda state: state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
+            lambda state: can_play_song("Epona's Song", state, player) and state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
         "Milk Bar Show":
             lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player),
         "Milk Bar Priority Mail to Aroma":

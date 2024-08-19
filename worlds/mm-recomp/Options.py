@@ -1,6 +1,6 @@
 from typing import Dict
 
-from Options import Choice, Option, Toggle, StartInventoryPool
+from Options import Choice, Option, Toggle, StartInventoryPool, DeathLink
 
 
 #class HardMode(Toggle):
@@ -35,5 +35,6 @@ class LogicDifficulty(Choice):
 
 mmr_options: Dict[str, type(Option)] = {
     "start_inventory_from_pool": StartInventoryPool,
-    "logic_difficulty": LogicDifficulty
+    "logic_difficulty": LogicDifficulty,
+    "death_link": DeathLink
 }

@@ -116,4 +116,5 @@ class MMRWorld(World):
 
     def fill_slot_data(self):
         return {
+            "death_link": self.options.death_link.value
         }
