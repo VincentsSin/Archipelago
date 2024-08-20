@@ -3,8 +3,8 @@ from typing import Dict
 
 from BaseClasses import Region, Tutorial
 from worlds.AutoWorld import WebWorld, World
-from .Items import MMRItem, item_data_table, item_table
-from .Locations import MMRLocation, location_data_table, location_table, locked_locations
+from .Items import MMRItem, item_data_table, item_table, code_to_item_table
+from .Locations import MMRLocation, location_data_table, location_table, code_to_location_table, locked_locations
 from .Options import mmr_options
 from .Regions import region_data_table, get_exit
 from .Rules import *
@@ -15,7 +15,7 @@ class MMRWebWorld(WebWorld):
     
     setup_en = Tutorial(
         tutorial_name="Start Guide",
-        description="A guide to playing the Majora's Mask Recompilation in Archipelago.",
+        description="A guide to playing Majora's Mask Recompiled in Archipelago.",
         language="English",
         file_name="guide_en.md",
         link="guide/en",
@@ -48,7 +48,7 @@ class MMRWorld(World):
         item_pool_count: Dict[str, int] = {}
         for name, item in item_data_table.items():
             item_pool_count[name] = 0
-            if item.code and item.can_create(mw, self.player):
+            if item.code and item.can_create(self.options):
                 while item_pool_count[name] < item.num_exist:
                     item_pool.append(self.create_item(name))
                     item_pool_count[name] += 1
@@ -73,18 +73,27 @@ class MMRWorld(World):
             region = mw.get_region(region_name, player)
             region.add_locations({
                 location_name: location_data.address for location_name, location_data in location_data_table.items()
-                if location_data.region == region_name and location_data.can_create(mw, player)
+                if location_data.region == region_name and location_data.can_create(self.options)
             }, MMRLocation)
             region.add_exits(region_data.connecting_regions)
 
         # Place locked locations.
         for location_name, location_data in locked_locations.items():
             # Ignore locations we never created.
-            if not location_data.can_create(mw, player):
+            if not location_data.can_create(self.options):
                 continue
 
             locked_item = self.create_item(location_data_table[location_name].locked_item)
             mw.get_location(location_name, player).place_locked_item(locked_item)
+
+        if not self.options.shuffle_swamphouse_reward.value:
+            mw.get_location("Swamphouse Reward", player).place_locked_item(self.create_item("Mask of Truth"))
+
+        if self.options.skullsanity.value == 0:
+            for i in range(0, 31):
+                if i == 3:
+                    continue
+                mw.get_location(code_to_location_table[0x34769420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
 
         # TODO: check options to see what player starts with
         mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
@@ -111,10 +120,12 @@ class MMRWorld(World):
         location_rules = get_location_rules(player)
         for location in mw.get_locations(player):
             name = location.name
-            if name in location_rules and location_data_table[name].can_create(mw, player):
+            if name in location_rules and location_data_table[name].can_create(self.options):
                 location.access_rule = location_rules[name]
 
     def fill_slot_data(self):
         return {
-            "death_link": self.options.death_link.value
+            "skullsanity": self.options.skullsanity.value,
+            "death_link": self.options.death_link.value,
+            "death_link_crashes_moon": self.options.death_link_crashes_moon.value
         }

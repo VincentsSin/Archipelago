@@ -10,7 +10,7 @@ class MMRLocation(Location):
 class MMRLocationData(NamedTuple):
     region: str
     address: Optional[int] = None
-    can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
+    can_create: Callable[[MultiWorld, int], bool] = lambda options: True
     locked_item: Optional[str] = None
 
 
@@ -281,123 +281,153 @@ location_data_table: Dict[str, MMRLocationData] = {
     ),
     "Swamphouse First Room Pot Near Entrance Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006271E
+        address=0x3476942006271E,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Crawling In Water Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062708
+        address=0x34769420062708,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Crawling Right Column Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270F
+        address=0x3476942006270F,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Crawling Left Column Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062713
+        address=0x34769420062713,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Against Far Wall Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062700
+        address=0x34769420062700,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Left Bugpatch Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062709
+        address=0x34769420062709,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Right Bugpatch Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270C
+        address=0x3476942006270C,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse First Room Upper Right Bugpatch Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270B
+        address=0x3476942006270B,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Monument Room Left Crate Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270A
+        address=0x3476942006270A,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Monument Room Right Crate Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006271B
+        address=0x3476942006271B,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Monument Room Crawling Wall Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270D
+        address=0x3476942006270D,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Monument Room Crawling On Monument Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006270E
+        address=0x3476942006270E,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Monument Room Behind Torch Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062702
+        address=0x34769420062702,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Beehive #1 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062717
+        address=0x34769420062717,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Beehive #2 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006271C
+        address=0x3476942006271C,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Small Pot Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062705
+        address=0x34769420062705,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Left Large Pot Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062710
+        address=0x34769420062710,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Right Large Pot Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062711
+        address=0x34769420062711,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Behind Vines Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062714
+        address=0x34769420062714,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Pottery Room Upper Wall Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062716
+        address=0x34769420062716,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Golden Room Crawling Left Wall Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062719
+        address=0x34769420062719,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Golden Room Crawling Right Column Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062704
+        address=0x34769420062704,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Golden Room Against Far Wall Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062701
+        address=0x34769420062701,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Golden Room Beehive Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062712
+        address=0x34769420062712,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Tall Grass #1 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062707
+        address=0x34769420062707,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Tall Grass #2 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062706
+        address=0x34769420062706,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Tree #1 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062715
+        address=0x34769420062715,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Tree #2 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x34769420062718
+        address=0x34769420062718,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Tree #3 Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006271D
+        address=0x3476942006271D,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Tree Room Beehive Token": MMRLocationData(
         region="Swamphouse",
-        address=0x3476942006271A
+        address=0x3476942006271A,
+        can_create=lambda options: options.skullsanity.value != 2
     ),
     "Swamphouse Reward": MMRLocationData(
         region="Swamphouse",
@@ -998,4 +1028,5 @@ location_data_table: Dict[str, MMRLocationData] = {
 }
 
 location_table = {name: data.address for name, data in location_data_table.items() if data.address is not None}
+code_to_location_table = {data.address: name for name, data in location_data_table.items() if data.address is not None}
 locked_locations = {name: data for name, data in location_data_table.items() if data.locked_item}

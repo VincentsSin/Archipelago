@@ -11,7 +11,7 @@ class MMRItemData(NamedTuple):
     code: Optional[int] = None
     type: ItemClassification = ItemClassification.filler
     num_exist: int = 1
-    can_create: Callable[[MultiWorld, int], bool] = lambda multiworld, player: True
+    can_create: Callable[[MultiWorld, int], bool] = lambda options: True
 
 
 item_data_table: Dict[str, MMRItemData] = {
@@ -46,7 +46,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Ocarina of Time": MMRItemData(
         code=0x3476942000004C,
         type=ItemClassification.progression,
-        can_create=lambda multiworld, player: False
+        can_create=lambda options: False
     ),
     "Heart Piece": MMRItemData(
         code=0x3476942000000C,
@@ -62,7 +62,8 @@ item_data_table: Dict[str, MMRItemData] = {
     "Swamp Skulltula Token": MMRItemData(
         code=0x34769420000052,
         type=ItemClassification.progression,
-        num_exist=30
+        num_exist=30,
+        can_create=lambda options: options.skullsanity.value == 1
     ),
     "Progressive Wallet": MMRItemData(
         code=0x34769420000008,
@@ -92,7 +93,7 @@ item_data_table: Dict[str, MMRItemData] = {
     "Song of Time": MMRItemData(
         code=0x34769420040067,
         type=ItemClassification.progression,
-        can_create=lambda multiworld, player: False
+        can_create=lambda options: False
     ),
     "Song of Healing": MMRItemData(
         code=0x34769420040068,
@@ -184,7 +185,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Mask of Truth": MMRItemData(
         code=0x3476942000008A,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_swamphouse_reward.value
     ),
     "Stone Mask": MMRItemData(
         code=0x3476942000008B,
@@ -431,8 +433,9 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Victory": MMRItemData(
         type=ItemClassification.progression,
-        can_create=lambda state: False
+        can_create=lambda options: False
     ),
 }
 
 item_table = {name: data.code for name, data in item_data_table.items() if data.code is not None}
+code_to_item_table = {data.code: name for name, data in item_data_table.items() if data.code is not None}
