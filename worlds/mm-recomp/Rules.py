@@ -2,6 +2,11 @@ from typing import Callable, Dict
 
 from BaseClasses import CollectionState, MultiWorld
 
+
+def universal_item_rule(item):
+    pass
+
+
 def can_play_song(song, state, player):
     return state.has(song, player) and state.has("Ocarina of Time", player)
 
