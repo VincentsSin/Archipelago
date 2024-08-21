@@ -66,6 +66,21 @@ Majora's Mask Recompiled:
     easy: 50
     no_logic: 0
 
+  shuffle_swamphouse_reward:
+    # Choose whether to shuffle the Mask of Truth given at the end of the Southern Swamphouse.
+    'false': 50
+    'true': 0
+
+  skullsanity:
+    # Choose what items gold skulltulas can give.
+    # 
+    # vanilla: Keep the swamphouse in generation, but only place Skulltula tokens there.
+    # anything: Any item can be given by any Skulltula, and tokens can be found anywhere in any world.
+    # ignore: Remove the swamphouse from generation entirely, lowering the hint percentage.
+    vanilla: 50
+    anything: 0
+    ignore: 0
+
   death_link:
     # When you die, everyone dies. Of course the reverse is true too.
     'false': 50
