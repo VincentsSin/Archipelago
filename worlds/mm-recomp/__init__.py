@@ -95,6 +95,26 @@ class MMRWorld(World):
                     continue
                 mw.get_location(code_to_location_table[0x34769420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
 
+        if not self.options.shuffle_great_fairy_reward.value:
+            mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
+
+        if self.options.fairysanity.value == 0:
+            mw.get_location("Woodfall Temple Entrance Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Wooden Flower Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Black Boe Room Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Entrance Freestanding SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Wooden Flower Deku Baba SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Wooden Flower Pot SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Moving Flower Platform Room Beehive SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Wooden Flower Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Push Block Skulltula SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Push Block Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Push Block Beehive SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Final Room Right Lower Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Final Room Right Upper Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Final Room Left Upper Platform SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+            mw.get_location("Woodfall Temple Final Room Bubble SF", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
+
         # TODO: check options to see what player starts with
         mw.get_location("Top of Clock Tower (Ocarina of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))
         mw.get_location("Top of Clock Tower (Song of Time)", player).place_locked_item(self.create_item(self.get_filler_item_name()))

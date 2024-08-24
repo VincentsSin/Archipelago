@@ -51,10 +51,22 @@ class Skullsanity(Choice):
     default = 0
 
 
+class ShuffleGreatFairyRewards(Toggle):
+    """Choose whether to shuffle Great Fairy rewards."""
+    display_name = "Shuffle Great Fairy Rewards"
+
+
+class Fairysanity(Toggle):
+    """Choose whether Stray Fairies are shuffled into the pool."""
+    display_name = "Fairysanity"
+
+
 mmr_options: Dict[str, type(Option)] = {
     "start_inventory_from_pool": StartInventoryPool,
     "logic_difficulty": LogicDifficulty,
     "shuffle_swamphouse_reward": ShuffleSwamphouseReward,
     "skullsanity": Skullsanity,
+    "shuffle_great_fairy_rewards": ShuffleGreatFairyRewards,
+    "fairysanity": Fairysanity,
     "death_link": DeathLink
 }

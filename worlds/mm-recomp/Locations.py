@@ -469,6 +469,10 @@ location_data_table: Dict[str, MMRLocationData] = {
         region="Woodfall",
         address=0x34769420064600
     ),
+    "Woodfall Great Fairy Reward": MMRLocationData(
+        region="Woodfall",
+        address=0x34769420030001
+    ),
     "Woodfall Temple Entrance Chest": MMRLocationData(
         region="Woodfall Temple",
         address=0x34769420061B18

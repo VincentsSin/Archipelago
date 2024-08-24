@@ -23,6 +23,10 @@ item_data_table: Dict[str, MMRItemData] = {
         code=0x34769420020000,
         type=ItemClassification.progression
     ),
+    "Great Spin Attack": MMRItemData(
+        code=0x34769420020001,
+        type=ItemClassification.useful
+    ),
     "Moon's Tear": MMRItemData(
         code=0x34769420000096,
         type=ItemClassification.progression
@@ -51,12 +55,13 @@ item_data_table: Dict[str, MMRItemData] = {
     "Heart Piece": MMRItemData(
         code=0x3476942000000C,
         type=ItemClassification.useful,
-        num_exist=52
+        num_exist=52,
+        can_create=lambda options: False
     ),
     "Heart Container": MMRItemData(
         code=0x3476942000000D,
         type=ItemClassification.useful,
-        num_exist=1
+        num_exist=14
         #num_exist=4
     ),
     "Swamp Skulltula Token": MMRItemData(
@@ -329,7 +334,8 @@ item_data_table: Dict[str, MMRItemData] = {
     # ~ ),
     "Dungeon Map (Woodfall)": MMRItemData(
         code=0x34769420090076,
-        type=ItemClassification.useful
+        type=ItemClassification.useful,
+        can_create=lambda options: False
     ),
     # ~ "Dungeon Map (Snowhead)": MMRItemData(
         # ~ code=0x34769420090176,
@@ -345,7 +351,8 @@ item_data_table: Dict[str, MMRItemData] = {
     # ~ ),
     "Compass (Woodfall)": MMRItemData(
         code=0x34769420090075,
-        type=ItemClassification.useful
+        type=ItemClassification.useful,
+        can_create=lambda options: False
     ),
     # ~ "Compass (Snowhead)": MMRItemData(
         # ~ code=0x34769420090175,
@@ -424,12 +431,14 @@ item_data_table: Dict[str, MMRItemData] = {
     "Purple Rupee": MMRItemData(
         code=0x34769420000005,
         type=ItemClassification.useful,
-        num_exist=7
+        num_exist=7,
+        can_create=lambda options: False
     ),
     "Silver Rupee": MMRItemData(
         code=0x34769420000006,
         type=ItemClassification.useful,
-        num_exist=9
+        #num_exist=9
+        num_exist=3
     ),
     "Victory": MMRItemData(
         type=ItemClassification.progression,
