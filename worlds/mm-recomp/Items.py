@@ -17,7 +17,8 @@ class MMRItemData(NamedTuple):
 item_data_table: Dict[str, MMRItemData] = {
     "Stray Fairy (Clock Town)": MMRItemData(
         code=0x3476942001007F,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.fairysanity.value
     ),
     "Progressive Magic Upgrade": MMRItemData(
         code=0x34769420020000,
@@ -25,7 +26,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Great Spin Attack": MMRItemData(
         code=0x34769420020001,
-        type=ItemClassification.useful
+        type=ItemClassification.useful,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Moon's Tear": MMRItemData(
         code=0x34769420000096,
@@ -295,7 +297,8 @@ item_data_table: Dict[str, MMRItemData] = {
     "Stray Fairy (Woodfall)": MMRItemData(
         code=0x34769420010000,
         type=ItemClassification.progression,
-        num_exist=15
+        num_exist=15,
+        can_create=lambda options: options.fairysanity.value
     ),
     # ~ "Stray Fairy (Snowhead)": MMRItemData(
         # ~ code=0x34769420010001,

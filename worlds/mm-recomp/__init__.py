@@ -101,6 +101,8 @@ class MMRWorld(World):
             mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
 
         if self.options.fairysanity.value == 0:
+            mw.get_location("Laundry Pool Stray Fairy (Clock Town)", player).place_locked_item(self.create_item("Stray Fairy (Clock Town)"))
+
             mw.get_location("Woodfall Temple Entrance Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
             mw.get_location("Woodfall Temple Wooden Flower Switch Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
             mw.get_location("Woodfall Temple Black Boe Room Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
