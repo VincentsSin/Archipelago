@@ -443,7 +443,7 @@ def get_location_rules(player):
         "Great Bay Temple Four Torches Chest":
             lambda state: can_use_fire_arrows(state, player),
         "Great Bay Temple Wart Chest":
-            lambda state.has("Progressive Bow", player),
+            lambda state: state.has("Progressive Bow", player),
         "Great Bay Temple Gekko Entrance Room Caged Chest":
             lambda state: can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player),
         "Great Bay Temple Red-Green Pipe First Room Chest":
