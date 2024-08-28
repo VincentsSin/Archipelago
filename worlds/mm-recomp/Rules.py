@@ -95,7 +95,7 @@ def get_region_rules(player):
         "Termina Field -> Ikana Graveyard":
             lambda state: can_play_song("Epona's Song", state, player),
         "Termina Field -> Ikana Canyon":
-            lambda state: can_play_song("Epona's Song", state, player) and state.has("Hookshot", player) and state.has("Garo Mask", player),
+            lambda state: can_play_song("Epona's Song", state, player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
         "Ikana Canyon -> Secret Shrine":
             lambda state: can_use_light_arrows(state, player),
         "Ikana Canyon -> Beneath the Well":
