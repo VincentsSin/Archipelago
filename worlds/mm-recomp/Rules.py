@@ -91,7 +91,7 @@ def get_region_rules(player):
         "Pirates' Fortress -> Pirates' Fortress (Interior)":
             lambda state: state.has("Goron Mask", state, player) or state.has("Hookshot", player),
         "Zora Cape -> Great Bay Temple":
-            lambda state: can_play_song("New Wave Bossa Nova", state, player) and state.has("Hookshot", player) and state.has("Zora Mask, state, player),
+            lambda state: can_play_song("New Wave Bossa Nova", state, player) and state.has("Hookshot", player) and state.has("Zora Mask", state, player),
         "Termina Field -> Ikana Graveyard":
             lambda state: can_play_song("Epona's Song", state, player),
         "Termina Field -> Ikana Canyon":
