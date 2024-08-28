@@ -355,7 +355,7 @@ def get_location_rules(player):
         "Goron's Lullaby":
             lambda state: state.has("Goron Mask", player) and (state.can_reach("Mountain Village Darmani", 'Location', player) or can_use_fire_arrows(state, player)),
         "Mountain Title Deed":
-            lambda state: state.has("Swamp Title Deed", player),
+            lambda state: state.has("Deku Mask", player) and state.has("Swamp Title Deed", player),
         "Goron Village Freestanding HP":
             lambda state: state.can_reach("Mountain Title Deed", 'Location', player),
             
@@ -471,18 +471,18 @@ def get_location_rules(player):
             
             
         "Graveyard Day 1 Chest":
-            lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player) and can_use_fire_arrows(state, player),
-        "Graveyard Day 2 Chest":    
             lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player),
+        "Graveyard Day 2 Chest":    
+            lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player) and has_explosives(state, player),
         "Graveyard Day 3 Chest":
             lambda state: state.has("Captain's Hat", player) and (can_smack_hard(state, player) or has_projectiles(state, player)),
         "Graveyard Skull Keeta Chest":
             lambda state: can_play_song("Sonata of Awakening", state, player) and can_smack_hard(state, player),
         "Song of Storms":    
-            lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player),
+            lambda state: state.has("Captain's Hat", player) and can_smack_hard(state, player) and can_use_fire_arrows(state, player),
             
         "Ikana Canyon Pamela's Father":
-            lambda state: can_play_song("Song of Healing", state, player),
+            lambda state: can_play_song("Song of Healing", state, player) and can_play_song("Song of Storms", state, player) and (has_explosives(state, player) or state.has("Stone Mask", player,)),
             
         
         "Secret Shrine Left Chest":
