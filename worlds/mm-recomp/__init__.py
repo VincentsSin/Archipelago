@@ -94,13 +94,14 @@ class MMRWorld(World):
                 if i == 3:
                     continue
                 mw.get_location(code_to_location_table[0x34769420062700 | i], player).place_locked_item(self.create_item("Swamp Skulltula Token"))
+                
 
         if not self.options.shuffle_great_fairy_rewards.value:
             mw.get_location("North Clock Town Great Fairy Reward", player).place_locked_item(self.create_item("Progressive Magic Upgrade"))
             mw.get_location("North Clock Town Great Fairy Reward (Has Transformation Mask)", player).place_locked_item(self.create_item("Great Fairy Mask"))
             mw.get_location("Woodfall Great Fairy Reward", player).place_locked_item(self.create_item("Great Spin Attack"))
 
-        if self.options.fairysanity.value == 0:
+        if not self.options.fairysanity.value:
             mw.get_location("Laundry Pool Stray Fairy (Clock Town)", player).place_locked_item(self.create_item("Stray Fairy (Clock Town)"))
 
             mw.get_location("Woodfall Temple Entrance Chest", player).place_locked_item(self.create_item("Stray Fairy (Woodfall)"))
