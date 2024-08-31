@@ -10,7 +10,7 @@ class MMRLocation(Location):
 class MMRLocationData(NamedTuple):
     region: str
     address: Optional[int] = None
-    can_create: Callable[[MultiWorld, int], bool] = lambda options: True
+    can_create = lambda options: True
     locked_item: Optional[str] = None
 
 

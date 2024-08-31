@@ -11,7 +11,7 @@ class MMRItemData(NamedTuple):
     code: Optional[int] = None
     type: ItemClassification = ItemClassification.filler
     num_exist: int = 1
-    can_create: Callable[[MultiWorld, int], bool] = lambda options: True
+    can_create = lambda options: True
 
 
 item_data_table: Dict[str, MMRItemData] = {
@@ -22,7 +22,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Progressive Magic Upgrade": MMRItemData(
         code=0x34769420020000,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Great Spin Attack": MMRItemData(
         code=0x34769420020001,
@@ -176,7 +177,8 @@ item_data_table: Dict[str, MMRItemData] = {
     ),
     "Great Fairy Mask": MMRItemData(
         code=0x34769420000086,
-        type=ItemClassification.progression
+        type=ItemClassification.progression,
+        can_create=lambda options: options.shuffle_great_fairy_rewards.value
     ),
     "Gibdo Mask": MMRItemData(
         code=0x34769420000087,
