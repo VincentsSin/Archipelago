@@ -2,6 +2,9 @@ from typing import Callable, Dict
 
 from BaseClasses import CollectionState, MultiWorld
 
+def universal_item_rule(item):
+    pass
+
 def can_play_song(song, state, player):
     return state.has(song, player) and state.has("Ocarina of Time", player)
 
@@ -185,7 +188,7 @@ def get_location_rules(player):
         "Stock Pot Inn Granny Story #2":
             lambda state: state.has("All-Night Mask", player),
         "Stock Pot Inn Anju and Kafei":
-            lambda state: state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
+            lambda state: can_play_song("Epona's Song", state, player) and state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
         "Milk Bar Show":
             lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player),
         "Milk Bar Priority Mail to Aroma":
@@ -335,19 +338,19 @@ def get_location_rules(player):
         "Mountain Village Darmani":
             lambda state: state.has("Lens of Truth", state, player) and state.has("Progressive Magic Upgrade", player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Hungry Goron":
-            lambda state: state.has("Goron Mask", player) and (can_use_fire_arrows(state, player) or (state.has("Deku Stick", state, player) and state.has("Progressive Magic Upgrade", player))),
+            lambda state: state.has("Goron Mask", player) and (can_use_fire_arrows(state, player),
         "Mountain Village Spring Ramp Grotto":
-            lambda state: state.has("Hookshot", player), # ~ or can_clear_snowhead(state, player),
+            lambda state: state.has("Hookshot", player), or can_clear_snowhead(state, player),
             
             
         "Twin Islands Ramp Grotto Chest":
             lambda state: has_explosives(state, player) and (state.has("Goron Mask", player) or state.has("Hookshot", player)),
         "Twin Islands Hot Water Grotto Chest":
-            lambda state: has_explosives(state, player) and ((can_use_fire_arrows(state, player) or state.can_reach("Mountain Village Darmani", 'Location', player)), # ~ or can_clear_snowhead(state, player)),
+            lambda state: has_explosives(state, player) and ((can_use_fire_arrows(state, player) or state.can_reach("Mountain Village Darmani", 'Location', player)), or can_clear_snowhead(state, player)),
         "Twin Islands Spring Underwater Cave Chest":
-            lambda state: state.has("Zora Mask", player), # ~ and can_clear_snowhead(state, player)
+            lambda state: state.has("Zora Mask", player), and can_clear_snowhead(state, player)
         "Twin Islands Spring Underwater Center Chest":
-            lambda state: state.has("Zora Mask", player), # ~ and can_clear_snowhead(state, player)
+            lambda state: state.has("Zora Mask", player), and can_clear_snowhead(state, player)
             
             
         "Goron Village Lens Cave Rock Chest":
