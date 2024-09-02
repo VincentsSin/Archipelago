@@ -295,7 +295,7 @@ def get_location_rules(player):
 
         "Deku Palace Bean Grotto Chest":
             lambda state: can_plant_beans(state, player) or state.has("Hookshot", player),
-        "Deku Palace Monkey Song":
+        "Sonata of Awakening":
             lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player),
         "Deku Palace Butler Race":
             lambda state: can_clear_woodfall(state, player) and has_bottle(state, player),
@@ -338,7 +338,7 @@ def get_location_rules(player):
         "Mountain Village Darmani":
             lambda state: state.has("Lens of Truth", state, player) and state.has("Progressive Magic Upgrade", player) and can_play_song("Song of Healing", state, player),
         "Mountain Village Hungry Goron":
-            lambda state: state.has("Goron Mask", player) and (can_use_fire_arrows(state, player),
+            lambda state: state.has("Goron Mask", player) and can_use_fire_arrows(state, player),
         "Mountain Village Spring Ramp Grotto":
             lambda state: state.has("Hookshot", player), or can_clear_snowhead(state, player),
             
@@ -518,6 +518,46 @@ def get_location_rules(player):
             lambda state: can_plant_beans(state, player),
         "Stone Tower Inverted Outside Right Chest":
             lambda state: can_plant_beans(state, player),
+
+
+        "Stone Tower Temple Armos Room Back Chest":
+            lambda state: can_use_light_arrows(state, player) or (state.has("Mirror Shield", player) and has_explosives(state, player)),
+        "Stone Tower Temple Eyegore Room Switch Chest":
+            lambda state: can_use_light_arrows(state, player) and (has_explosives(state, player) or state.has("Great Spin Attack", player)),
+        "Stone Tower Temple Eastern Water Room Sun Block Chest":
+            lambda state: can_use_light_arrows(state, player) or state.has("Mirror Shield", player),
+        "Stone Tower Temple Wall Suns Room Sun Block Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple Wall Suns Room Center Chest"
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player), and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple Wall Air Gust Room Side Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple Wall Air Gust Room End Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple Garo Master Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple After Garo Upside Down Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and can_use_light_arrows(state, player),
+        "Stone Tower Temple Eyegore Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and (can_use_light_arrows(state, player) or state.has("Mirror Shield", player)),
+        "Stone Tower Temple Inverted Eastern Air Gust Room Fire Chest":
+            lambda state: state.has("Deku Mask", player),
+        "Stone Tower Temple Inverted Eastern Air Gust Room Snugly Tucked Cranny Chest":
+            lambda state: state.has("Deku Mask", player) and can_use_fire_arrows(state, player),
+        "Stone Tower Temple Inverted Eastern Air Gust Room Hall Floor Switch Chest":
+            lambda state: state.has("Deku Mask", player),
+        "Stone Tower Temple Inverted Wizzrobe Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player),
+        "Stone Tower Temple Inverted Death Armos Maze Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player),
+        "Stone Tower Temple Inverted Gomess Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player),
+        "Stone Tower Temple Inverted Eyegore Chest":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player),
+        "Stone Tower Temple Heart Container":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and state.has("Giant's Mask", player) and (state.has("Boss Key (Stone Tower Temple)", state, player) or state.has("Twinmold's Remains", state, player)),
+        "Stone Tower Temple Twinmold's Remains":
+            lambda state: state.has("Small Key (Stone Tower Temple)", state, player) and state.has("Deku Mask", player) and state.has("Giant's Mask", player) and (state.has("Boss Key (Stone Tower Temple)", state, player) or state.has("Twinmold's Remains", state, player)),
 
 
         "Defeat Majora":
