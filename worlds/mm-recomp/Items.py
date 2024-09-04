@@ -11,7 +11,7 @@ class MMRItemData(NamedTuple):
     code: Optional[int] = None
     type: ItemClassification = ItemClassification.filler
     num_exist: int = 1
-    can_create = lambda options: True
+    can_create: Callable = lambda options: True
 
 
 item_data_table: Dict[str, MMRItemData] = {
