@@ -22,6 +22,7 @@ region_data_table: Dict[str, MMRRegionData] = {
     "Mountain Village": MMRRegionData(["Twin Islands", "Path to Snowhead"]),
     "Twin Islands": MMRRegionData(["Goron Village"]),
     "Goron Village": MMRRegionData(["Goron Shrine"]),
+    "Goron Shrine": MMRRegionData([]),
     "Path to Snowhead": MMRRegionData(["Snowhead Temple"]),
     "Snowhead Temple": MMRRegionData([]),
     "Great Bay": MMRRegionData(["Ocean Spider House", "Pirates' Fortress", "Pinnacle Rock", "Zora Cape"]),
