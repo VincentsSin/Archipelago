@@ -188,7 +188,7 @@ def get_location_rules(player):
         "Stock Pot Inn Granny Story #2":
             lambda state: state.has("All-Night Mask", player),
         "Stock Pot Inn Anju and Kafei":
-            lambda state: can_play_song("Epona's Song", state, player) and state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
+            lambda state: state.has("Kafei's Mask", player) and can_play_song("Epona's Song", state, player) and state.has("Letter to Kafei", player) and state.has("Pendant of Memories", player) and state.has("Hookshot", player) and (state.has("Garo Mask", player) or state.has("Gibdo Mask", player)),
         "Milk Bar Show":
             lambda state: state.has("Romani Mask", player) and state.has("Deku Mask", player) and state.has("Goron Mask", player) and state.has("Zora Mask", player) and state.has("Ocarina of Time", player),
         "Milk Bar Priority Mail to Aroma":
@@ -299,6 +299,10 @@ def get_location_rules(player):
             lambda state: state.has("Ocarina of Time", player) and can_plant_beans(state, player),
         "Deku Palace Butler Race":
             lambda state: can_clear_woodfall(state, player) and has_bottle(state, player),
+
+
+        "Woodfall Great Fairy Reward":
+            lambda state: state.has("Stray Fairy (Woodfall)", player, 15),
 
 
         "Woodfall Temple Dragonfly Chest":
