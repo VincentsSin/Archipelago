@@ -67,7 +67,7 @@ item_data_table: Dict[str, MMRItemData] = {
         num_exist=12
         #num_exist=4
     ),
-    "Heart Container": MMRItemData(
+    "Heart Container (Filler)": MMRItemData(
         code=0x3476942000000D,
         type=ItemClassification.filler,
         num_exist=2
