@@ -64,8 +64,13 @@ item_data_table: Dict[str, MMRItemData] = {
     "Heart Container": MMRItemData(
         code=0x3476942000000D,
         type=ItemClassification.useful,
-        num_exist=14
+        num_exist=12
         #num_exist=4
+    ),
+    "Heart Container": MMRItemData(
+        code=0x3476942000000D,
+        type=ItemClassification.filler,
+        num_exist=2
     ),
     "Swamp Skulltula Token": MMRItemData(
         code=0x34769420000052,
@@ -435,7 +440,7 @@ item_data_table: Dict[str, MMRItemData] = {
     # ~ ),
     "Purple Rupee": MMRItemData(
         code=0x34769420000005,
-        type=ItemClassification.useful,
+        type=ItemClassification.filler,
         num_exist=7,
         can_create=lambda options: False
     ),

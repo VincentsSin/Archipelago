@@ -81,6 +81,16 @@ Majora's Mask Recompiled:
     anything: 0
     ignore: 0
 
+  shuffle_great_fairy_rewards:
+    # Choose whether to shuffle Great Fairy rewards.
+    'false': 50
+    'true': 0
+
+  fairysanity:
+    # Choose whether Stray Fairies are shuffled into the pool.
+    'false': 50
+    'true': 0
+
   death_link:
     # When you die, everyone dies. Of course the reverse is true too.
     'false': 50
