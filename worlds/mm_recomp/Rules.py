@@ -469,12 +469,12 @@ def get_location_rules(player):
             # ~ lambda state: (can_use_ice_arrows(state, player) and can_use_fire_arrows(state, player) and state.has("Small Key (Great Bay Temple)", player) and state.has("Boss Key (Great Bay Temple)", player)) or (state.has("Gyorg's Remains", player) and state.has("Progressive Bow", player)),
         
 
-        # ~ "Road to Ikana Pillar Chest":
-            # ~ lambda state: state.has("Hookshot", player),
-        # ~ "Road to Ikana Rock Grotto Chest":
-            # ~ lambda state: state.has("Goron Mask", player),
-        # ~ "Road to Ikana Stone Soldier":
-            # ~ lambda state: can_play_song("Epona's Song", state, player) and has_bottle(state, player) and state.has("Progressive Magic Upgrade", player) and state.has("Lens of Truth", player),
+        "Road to Ikana Pillar Chest":
+            lambda state: state.has("Hookshot", player),
+        "Road to Ikana Rock Grotto Chest":
+            lambda state: state.has("Goron Mask", player),
+        "Road to Ikana Stone Soldier":
+            lambda state: can_play_song("Epona's Song", state, player) and has_bottle(state, player) and state.has("Progressive Magic Upgrade", player) and state.has("Lens of Truth", player),
             
             
         # ~ "Graveyard Day 1 Chest":
