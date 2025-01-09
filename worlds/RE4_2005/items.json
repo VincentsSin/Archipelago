@@ -163,35 +163,35 @@
     {
         "name": "Matilda",
         "category": [
-            "New Game Plus 1"
+            "Matilda", "Weapon"
         ],
         "progression": true
     },
     {
         "name": "Infinite Launcher",
         "category": [
-            "New Game Plus 2"
+            "Infinite Launcher", "Weapon"
         ],
         "useful": true
     },
     {
         "name": "Chicago Typewriter",
         "category": [
-            "New Game Plus 3"
+            "Chicago Typewriter", "Weapon"
         ],
         "useful": true
     },
     {
         "name": "Handcannon",
         "category": [
-            "New Game Plus 4"
+            "Handcannon", "Weapon"
         ],
         "progression": true
     },
     {
         "name": "P.R.L. 412",
         "category": [
-            "New Game Plus 5"
+            "P.R.L. 412", "Weapon"
         ],
         "useful": true
     },
@@ -441,7 +441,7 @@
         "category": [
             "Merchant Upgrade"
         ],
-        "count": 2,
+        "count": 3,
         "progression": true
     },
 	{
@@ -665,21 +665,21 @@
     {
         "name": "Stock (Red9)",
         "category": [
-            "Merchant Upgrade"
+            "Merchant Upgrade", "Weapon"
         ],
         "progression": true
     },
     {
         "name": "Stock (TMP)",
         "category": [
-            "Merchant Upgrade"
+            "Merchant Upgrade", "Weapon"
         ],
         "progression": true
     },
     {
         "name": "Scope (Rifle)",
         "category": [
-            "Merchant Upgrade"
+            "Merchant Upgrade", "Weapon"
         ],
         "progression": true
     },
@@ -1048,28 +1048,28 @@
         "category": [
             "Miscellaneous"
         ],
-        "useful": true
+        "progression": true
     },
     {
         "name": "Treasure Map (Castle)",
         "category": [
             "Miscellaneous"
         ],
-        "useful": true
+        "progression": true
     },
     {
         "name": "Treasure Map (Island)",
         "category": [
             "Miscellaneous"
         ],
-        "useful": true
+        "progression": true
     },
     {
         "name": "Tactical Vest",
         "category": [
             "Miscellaneous"
         ],
-        "useful": true
+        "progression": true
     },
     {
         "name": "Blue Medallion",
